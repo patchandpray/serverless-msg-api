@@ -23,12 +23,19 @@ The following tools are provided:
 * setup\_environment.py
 * upload\_code.py
 
+Lambda function code can be found in:
+
+* main.py
+
 ## How it works
 
-Upon posting a message to a email endpoint (msg\_id) the message is sent
-using SES and stored in dynamodb in a table called 'messages'.
+Upon posting a message to the api endpoint whilst supplying the email address
+(in parameter: msg\_id) the message is sent using SES and stored in dynamodb
+in a table called 'messages'.
+
 It is possible to store message content encrypted by supplying
 store\_secure=True as a parameter to the API when using POST.
+
 Messages for a certain msg\_id (email address) can be retrieved by issuing
 a GET request to the /msg API endpoint.
 
@@ -231,8 +238,8 @@ provided.
 provided for decrypting store\_secure message content).
 * Logging for api gateway to cloudwatch.
 * Strict allowing of api parameters on API Gateway (currently all parameters are
-* forwarded since we use AWS\_PROXY) and parameters are not error handled at
-* lambda side.
+forwarded since we use AWS\_PROXY) and parameters are not error handled at
+lambda side.
 * Better error handling in lambda function.
 * Automatically add API documentation in API Gateway.
 * Testset for testing developed lambda code.
