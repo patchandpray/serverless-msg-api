@@ -229,7 +229,8 @@ environment do the following:
 * Delete the lambda function `msg_api`
 * Delete the API gateway `msg-api`
 
-Use `make cleanup` to clean up files and directories created during setup environment.
+Use `make cleanup` to clean up local files and directories created during
+setup environment.
 
 ### What could be improved
 
