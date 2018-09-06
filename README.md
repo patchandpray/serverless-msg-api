@@ -108,27 +108,27 @@ one off atomic operation for setting up the environment.**
 ### Using Docker
 
 from your local machine set up aws cli:
-`aws configure`
+* `aws configure`
 
-add your aws-region, aws-account-id and email address to use for ses to
-`env_config.yml`
+add your aws-region, aws-account-id and email address to use for ses to:
+* `env_config.yml`
 
 update the lambda configuration file `main.yml`:
-substitute `aws_account_id` for your aws-account-id and `sender_email` for the
-email address to be used with ses
+* substitute `aws_account_id` for your aws-account-id
+* substitute `sender_email` for the email address to be used with ses
 
-run `make docker-build`
-run `make docker-run` 
+* run `make docker-build`
+* run `make docker-run` 
 
-run `python3 -m venv lambdaenv`
-run `source lambdaenv/bin/activate`
-run `pip install -r lambda_requirements.txt`
-exit the lambdaenv `deactivate`
+* run `python3 -m venv lambdaenv`
+* run `source lambdaenv/bin/activate`
+* run `pip install -r lambda_requirements.txt`
+* exit the lambdaenv `deactivate`
 
-run `make zip`
+* run `make zip`
 
 setup the environment for running serverless-msg-api:
-run `make setup-env`
+* run `make setup-env`
 
 ### Using local environment
 
@@ -136,32 +136,33 @@ from repository root:
 
 Configure aws with your region and account that has privileges to setup the
 environment:
-`aws configure`
+* `aws configure`
 
-add your aws-region, aws-account-id and email address to use for ses to
-`env_config.yml`
+add your aws-region, aws-account-id and email address to use for ses to:
+* `env_config.yml`
 
 update the lambda configuration file `main.yml`:
-substitute `aws_account_id` for your aws-account-id and `sender_email` for the
-email address to be used with ses
+* substitute `aws_account_id` for your aws-account-id
+* substitute `sender_email` for the email address to be used with ses
 
 install dependencies for the lambda function:
-run `python3 -m venv lambdaenv`
-run `source lambdaenv/bin/activate`
-run `pip install -r lambda_requirements.txt`
-exit the lambdaenv `deactivate`
+* run `python3 -m venv lambdaenv`
+* run `source lambdaenv/bin/activate`
+* run `pip install -r lambda_requirements.txt`
+* exit the lambdaenv `deactivate`
 
 install dependencies for creating the environment:
-run `python3 -m venv env`
-run `source env/bin/activate`
-run `pip install -r requirements.txt`
+* run `python3 -m venv env`
+* run `source env/bin/activate`
+* run `pip install -r requirements.txt`
 
 from the env virtualenvironment:
+
 create the zip file containing the lambda function code and dependencies:
-run `make zip`
+* run `make zip`
 
 setup the environment for running serverless-msg-api:
-run `make setup-env`
+* run `make setup-env`
 
 ## Use the msg API using POST and GET
 
