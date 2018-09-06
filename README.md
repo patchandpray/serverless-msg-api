@@ -15,7 +15,7 @@ This application uses the following AWS services:
 * Lambda
 * DynamoDB
 * API Gateway
-* AMI
+* IAM
 * SES
 
 The following tools are provided:
