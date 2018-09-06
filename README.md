@@ -114,8 +114,8 @@ Add your aws-region, aws-account-id and email address to use for ses to:
 * `env_config.yml`
 
 Update the lambda configuration file `main.yml`:
-* substitute `aws_account_id` for your aws-account-id
-* substitute `sender_email` for the email address to be used with ses
+* substitute `aws_account_id` in iam\_role for your aws-account-id
+* substitute `sender_email` in environment vars for the email address to be used with ses
 
 Create docker image and run it:
 * run `make docker-build`
@@ -145,8 +145,8 @@ Add your aws-region, aws-account-id and email address to use for ses to:
 * `env_config.yml`
 
 Update the lambda configuration file `main.yml`:
-* substitute `aws_account_id` for your aws-account-id
-* substitute `sender_email` for the email address to be used with ses
+* substitute `aws_account_id` in iam\_role for your aws-account-id
+* substitute `sender_email` in environment vars for the email address to be used with ses
 
 Install dependencies for the lambda function:
 * run `python3 -m venv lambdaenv`
