@@ -41,13 +41,13 @@ possible different implentation for sending sms and encrypting messages
 
 ### Security considerations
 
-API Gateway GET and POST methods require authorization via and api authentication
+* API Gateway GET and POST methods require authorization via and api authentication
 token.
-Traffic to API gateway endpoints are encrypted via SSL.
-Lambda Environment variables are encrypted at rest using aws lambda builtin
+* Traffic to API gateway endpoints are encrypted via SSL.
+* Lambda Environment variables are encrypted at rest using aws lambda builtin
 encryption key.
-Dynamodb table is  encrypted at rest by setting SSES to True
-Optionally it is possible to additionally encrypt msg content stored in dynamodb
+* Dynamodb table is encrypted at rest by setting SSES to True.
+* Optionally it is possible to additionally encrypt msg content stored in dynamodb
 by passing the store\_secure=True parameter on POST. This will encrypt the msg
 content before storing it in dynamodb. This might be usefull for handling sensitive
 data in for example, complying with security standards or GDPR.
@@ -65,14 +65,15 @@ The /msg endpoint is the implementation for sending messages to an external
 endpoint and retrieving them for inspection.
 
 The API currently requires the following parameters:
-GET: 
-msg\_id=email\_address (string)
 
-POST:
-msg\_id=email\_address (string)
-msg=message\_content (string)
-subject=message\_subject (string)
-store\_secure=Boolean (True|False)
+**GET**: 
+* msg\_id=email\_address (string)
+
+**POST**:
+* msg\_id=email\_address (string)
+* msg=message\_content (string)
+* subject=message\_subject (string)
+* store\_secure=Boolean (True|False)
 
 Please note that no restriction is currently placed on input parameters.
 
@@ -92,8 +93,8 @@ If building locally:
 If building using docker:
 * docker
 
-!! Please note that setup\_environment.py is currently NOT idempotent, it is a
-one off atomic operation for setting up the environment.
+**Please note that `setup_environment.py` is currently NOT idempotent, it is a
+one off atomic operation for setting up the environment.**
 
 ### Using Docker
 
