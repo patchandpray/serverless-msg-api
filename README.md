@@ -66,9 +66,9 @@ token.
 * Traffic to API gateway endpoints are encrypted via SSL.
 * Lambda Environment variables are encrypted at rest using aws lambda builtin
 encryption key.
-* Dynamodb table is encrypted at rest by setting SSES to True.
 * Lambda function only has access to the limited resources and actions it requires via
 IAM policy
+* Dynamodb table is encrypted at rest by setting SSES to True.
 * Optionally it is possible to additionally encrypt msg content stored in dynamodb
 by passing the store\_secure=True parameter on POST. This will encrypt the msg
 content before storing it in dynamodb. This might be usefull for handling sensitive
