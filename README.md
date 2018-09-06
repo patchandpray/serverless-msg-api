@@ -1,6 +1,6 @@
 # SERVERLESS-MSG-API with AWS Lambda
 
-Running a serverless MSG API using AWS Lambda
+Running a serverless MSG API using AWS Lambda.
 
 ## What is it
 
@@ -23,7 +23,7 @@ The following tools are provided:
 * setup\_environment.py
 * upload\_code.py
 
-### How it works
+## How it works
 
 Upon posting a message to a email endpoint (msg\_id) the message is sent
 using SES and stored in dynamodb in a table called 'messages'.
@@ -169,7 +169,8 @@ Setup the environment for running serverless-msg-api:
 
 ## Use the msg API using POST and GET
 
-**Be sure to validate your email address that you specified in env\_config.yml.**
+**Be sure to validate your email address that you specified in env\_config.yml
+after having set up the environment.**
 
 Go to your Email.
 
