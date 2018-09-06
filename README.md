@@ -156,12 +156,14 @@ run `make setup-env`
 
 ## Use the msg API using POST and GET
 
-!! Be sure to validate your email address that you specified in env\_config.yml.
+**Be sure to validate your email address that you specified in env\_config.yml.**
+
 Go to your Email.
+
 Verify your Email address so that it can be uses with SES.
 
-use `make post` for posting a message using the msg api
-use `make get` for getting all messages for your email address
+* use `make post` for posting a message using the msg api
+* use `make get` for getting all messages for your email address
 
 ## Notes
 
