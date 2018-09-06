@@ -98,6 +98,7 @@ If building locally:
 * Python 3.6
 * Python3 module venv (for creating the virtualenvironments)
 * pip
+* zip
 
 If building using docker:
 * docker
