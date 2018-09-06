@@ -36,8 +36,17 @@ This will return a list of all messages sent for this particular msg\_id.
 
 ### Design considerations
 
-why use ses
-possible different implentation for sending sms and encrypting messages
+Chosen was for only sending email messages using SES. It would be possible
+to send both email and sms messages by posting received messages to an
+Amazon SQS queue. A different Lambda function would be subsribed to this queue
+and pick up any messages there, differentiating between email and sms. Email
+messages can be forwarded to SES and SMS messages to an external sms service.
+
+Regarding storing messages encrypted using store\_secure parameter: Ideally
+this would also be handled using an SQS queue and seperate function. Lambda
+would forward messages which are labeled store\_secure to this SQS queue.
+A seperate lambda function would pick up these messages and encrypt them
+before storing them in dynamodb.
 
 ### Security considerations
 
@@ -182,22 +191,22 @@ setup\_environment.py does the following:
 
 Development tool implementing methods for:
 
-Zipping lambda function code
-Uploading lambda function code
-Updating lambda function code
-Updating lambda function configuration
+* Zipping lambda function code
+* Uploading lambda function code
+* Updating lambda function code
+* Updating lambda function configuration
 
 ### Destroying the environment
 
 Since currently no option is provided for automatically bringing down the
 environment do the following:
 
-Log in to the AWS Console
-Remove your email address from SES
-Delete the dynamodb table `messages`
-Remove the IAM role `msg_api_role`
-Delete the lambda function `msg_api`
-Delete the API gateway `msg-api`
+* Log in to the AWS Console
+* Remove your email address from SES
+* Delete the dynamodb table `messages`
+* Remove the IAM role `msg_api_role`
+* Delete the lambda function `msg_api`
+* Delete the API gateway `msg-api`
 
 ### What could be improved
 
@@ -210,7 +219,7 @@ provided.
 * Provide POST parameters like msg content and subject in POST body.
 * Seperate endpoint for decrypting encrypted messages (ccurently no option is
 provided for decrypting store\_secure message content).
-* Logging for api gateway.
+* Logging for api gateway to cloudwatch.
 * Strict allowing of api parameters on API Gateway (currently all parameters are
 * forwarded since we use AWS\_PROXY) and parameters are not error handled at
 * lambda side.
