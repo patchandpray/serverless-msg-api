@@ -117,7 +117,8 @@ If building using docker:
 * docker
 
 **Please note that `setup_environment.py` is currently NOT idempotent, it is a
-one off atomic operation for setting up the environment.**
+one off atomic operation for setting up the environment. Terraform would be a
+better solution here if time would permit.**
 
 ### Using Docker
 
