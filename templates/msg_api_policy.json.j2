@@ -1,0 +1,32 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "msgApiPolicyLogActions",
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+            ],
+            "Resource": "arn:aws:logs:{{ aws_region }}:{{ aws_account_id }}:*"
+        },
+        {
+            "Sid": "msgApiPolicyAllowedLambdaActions",
+            "Effect": "Allow",
+            "Action": [
+                "ses:SendEmail"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "msgApiPolicyAllowedDynamoDBActions",
+            "Effect": "Allow",
+            "Action": [
+                "dynamodb:PutItem",
+                "dynamodb:Query"
+            ],
+            "Resource": "arn:aws:dynamodb:{{ aws_region }}:{{ aws_account_id }}:table/messages"
+        }
+    ]
+}

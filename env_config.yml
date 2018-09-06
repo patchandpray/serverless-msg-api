@@ -1,0 +1,6 @@
+# AWS configuration
+aws_region:
+aws_account_id:
+
+# SES configuration
+email_address:

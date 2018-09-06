@@ -1,0 +1,13 @@
+function_name: msg_api
+iam_role: arn:aws:iam::aws_account_id:role/msg_api_role
+handler: main.msg
+description: Function for posting a message to SES and storing it in dynamoDB
+timeout: 120
+memory_size: 512
+publish: True
+tags:
+  name: msg
+environment:
+  Variables:
+    encryption_key: supersecurekey123
+    sender_email: sender_email
