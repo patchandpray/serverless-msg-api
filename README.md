@@ -111,8 +111,10 @@ one off atomic operation for setting up the environment.**
 From your local machine set up aws cli:
 * `aws configure`
 
-Add your aws-region, aws-account-id and email address to use for ses to:
-* `env_config.yml`
+Update the environment configuration file `env_config.yml`:
+* add `aws-region`
+* add `aws-account-id`
+* add `email_address` to use with ses
 
 Update the lambda configuration file `main.yml`:
 * substitute `aws_account_id` in iam\_role for your aws-account-id
@@ -142,8 +144,10 @@ Configure aws with your region and account that has privileges to setup the
 environment:
 * `aws configure`
 
-Add your aws-region, aws-account-id and email address to use for ses to:
-* `env_config.yml`
+Update the environment configuration file `env_config.yml`:
+* add `aws-region`
+* add `aws-account-id`
+* add `email_address` to use with ses
 
 Update the lambda configuration file `main.yml`:
 * substitute `aws_account_id` in iam\_role for your aws-account-id
