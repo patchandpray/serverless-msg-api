@@ -5,7 +5,7 @@ aws_region = $(shell cat aws_region)
 pwd = $(shell pwd)
 store_secure = False
 
-.PHONY: docker-build docker-run setup-env zip update get post
+.PHONY: docker-build docker-run setup-env zip update get post cleanup
 
 # Build Dockerfile
 docker-build:
@@ -32,3 +32,6 @@ get:
 
 post:
 	curl -X 'POST' -H 'X-Api-Key: $(api_key)' 'https://$(api_id).execute-api.$(aws_region).amazonaws.com/dev/msg?msg_id=$(msg_id)&msg=Testing&subject=test_api&store_secure=$(store_secure)' 
+
+cleanup:
+	./cleanup.sh
