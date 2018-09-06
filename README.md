@@ -27,6 +27,10 @@ Lambda function code can be found in:
 
 * main.py
 
+Lambda function configuration can be found in:
+
+* main.yml
+
 ## How it works
 
 Upon posting a message to the api endpoint whilst supplying the email address
