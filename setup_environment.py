@@ -278,3 +278,5 @@ if __name__ == '__main__':
     setup_ses(**env_config)
 
     print('Environment created succesfully.')
+    print('\n!! Be sure to validate the email address you specified for using with SES !!')
+
