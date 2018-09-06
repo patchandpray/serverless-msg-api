@@ -50,7 +50,7 @@ before storing them in dynamodb.
 
 ### Security considerations
 
-* API Gateway GET and POST methods require authorization via and api authentication
+* API Gateway GET and POST methods require authorization via an api authentication
 token.
 * Traffic to API gateway endpoints are encrypted via SSL.
 * Lambda Environment variables are encrypted at rest using aws lambda builtin
