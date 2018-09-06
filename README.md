@@ -147,7 +147,7 @@ environment:
 Update the environment configuration file `env_config.yml`:
 * add `aws-region`
 * add `aws-account-id`
-* add `email_address` to use with ses
+* add `email_address` to use with SES
 
 Update the lambda configuration file `main.yml`:
 * substitute `aws_account_id` in iam\_role for your aws-account-id
