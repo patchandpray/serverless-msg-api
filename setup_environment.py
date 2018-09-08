@@ -40,6 +40,7 @@ def setup_iam():
     print('Attached IAM policy to {Arn}.'.format(**setup_lambda_role['Role']))
 
 def setup_lambda_function(zip_file, **lambda_config):
+    """ Sets up the lambda function with configuration """
 
     client = boto3.client('lambda')
 
@@ -62,6 +63,7 @@ def setup_lambda_function(zip_file, **lambda_config):
     print('Created lambda function: {FunctionName}'.format(**create_lambda))
 
 def setup_dynamodb_table():
+    """ Sets up the dynamodb table messages """
 
     client = boto3.client('dynamodb')
     create_table = client.create_table(
@@ -157,7 +159,6 @@ def setup_api_gateway(**env_config):
 
     uri = "arn:aws:apigateway:{aws_region}:lambda:path/{api_version}/functions/arn:aws:lambda:{aws_region}:{aws_account_id}:function:{lambda_function_name}/invocations".format(**uri_data)
 
-    methods = ['GET','POST']
     methods = {'GET': '200', 'POST': '201'}
 
     for method, value in methods.items():
